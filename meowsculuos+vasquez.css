@@ -38,7 +38,8 @@ footer {
   text-transform: none;
   font-size: 12px;
   border-style: solid;
-  margin-top: 5px;
+  border-width: 1px;
+  margin-top: 12px;
   position: -webkit-sticky;
   position: sticky;
 }
@@ -74,8 +75,7 @@ h3 {
 }
 
 .centroImagen {
-  -o-object-position: center !important;
-     object-position: center !important;
+  margin: auto !important;
 }
 
 fieldset {
