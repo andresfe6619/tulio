@@ -115,7 +115,7 @@ select {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -171,6 +171,10 @@ span {
 
 .fondoImagen5 {
   background-image: url(imagenes/fondoimagen5.jpg) !important;
+}
+
+.setentavh {
+  min-height: 70vh;
 }
 
 .bordeBlanco {
@@ -315,20 +319,6 @@ nav {
           align-items: baseline;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-.prod {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  -webkit-transform: translate(-13px);
-          transform: translate(-13px);
-}
-
-.prod1 {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  -webkit-transform: translate(-13px);
-          transform: translate(-13px);
 }
 
 .btn--correo {
