@@ -17,7 +17,9 @@ width: 100%;
 list-style-position: left;
 }
 
-
+.bordePunteado{
+  border: dashed;
+}
 
 
 h4 {
@@ -292,10 +294,7 @@ object-position: left !important;
 width: 50px !important;
 }
 
-iframe{
-object-position: center;
-  
-}
+
 
 ul{
 
@@ -438,7 +437,10 @@ $tambien: (
    }
   
 }
-
+iframe:default {
+  min-height: 50vh ;
+ min-width: 50vh ;
+}
 
 @media (min-width: 600px )  and ( max-width: 1199px) {
 
@@ -446,9 +448,25 @@ $tambien: (
  
 font-weight: 750;
 width: auto;
+
 }
 
-  .fondoAmarillo { 
+
+.botonBurger{
+
+  position: fixed;
+  
+    top: 0;
+  
+    right: 0;
+  
+    width: 3rem;
+  
+  
+  
+  }  
+
+.fondoAmarillo { 
   background: green;
  }
 
@@ -468,6 +486,10 @@ color: white;
 
 }
 
+iframe {
+  min-height: 80vh;
+ min-width: 80vh;
+}
 
 
 
@@ -480,6 +502,14 @@ font-weight: 1000 !important;
 width: auto;
 
 }
+
+iframe {
+  min-height: 80vh;
+ min-width: 100vh;
+}
+
+
+
 .img{
 
   object-position: left !important;
