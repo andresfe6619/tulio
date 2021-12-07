@@ -28,7 +28,14 @@ let edad= +añoActual - + año
 let nombre = prompt("Por favor ingrese su nombre")
   let apellido = prompt("Ahora el apellido")
   alert("Eres " + nombre+" "+apellido )
-  alert("tienes o estas cerca de" +" "+ edad + "?")
+  if (edad <18) {
+  
+  alert ("Eres menor de edad")
+}
+
+else{
+  alert ("eres mayor de edad")
+}
 
   
 </script>
