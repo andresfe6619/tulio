@@ -1,25 +1,28 @@
-function Monto () { return prompt ("ingrese el monto ") }
+
+//function Monto () {  prompt ("ingrese el monto") }
 let Dolares= prompt ("Ingresa la divisa de tu pais")
 if (Dolares== "pesos colombianos"){
   result = 4018
+  alert(`Un dolar en su pais es ${result} pesos colombianos` )
 }
 
  else if (Dolares== "pesos mexicanos"){
     result = 20
-}
+    alert(`Un dolar en su pais es ${result} pesos mexicanos` )
+  }
 
  else {
    alert("aun no llegamos a tu pais :(")
    
  }
 
-const COTIZACION_DOLAR= Dolares
+//const COTIZACION_DOLAR= Dolares
 
 
 
-let ResultadoFinal = (value) =>  value / COTIZACION_DOLAR;
+//let ResultadoFinal = (value) =>  value / COTIZACION_DOLAR;
 
-alert (ResultadoFinal)
+//alert (ResultadoFinal)
 
 //parte 1 
 

@@ -81,7 +81,7 @@
 
 
 <main>
-  <form class="row g-3">
+  <form  id="formulario" class="row g-3 preventDefault" >
     <div class="col-md-4">
       <label for="validationServer01" class="form-label">Primer Nombre</label>
       <input type="text" class="form-control is-valid" id="validationServer01" value="Petter" required>
@@ -116,7 +116,7 @@
     <div class="col-md-3">
       <label for="validationServer04" class="form-label">estado/provincia/departamento</label>
       <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-        <option selected disabled value="" >Antioquia</option>
+        <option selected >Antioquia</option>
         <option >Caldas</option>
         <option >Tolima</option>
         <option >Chocó</option>
@@ -145,14 +145,18 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary blancoNegro"  type="submit">Enviar</button>
+      <button class="btn btn-primary blancoNegro "  type="submit">Enviar</button>
     </div>
-  </form>
-</main>
+ 
   
 
+</form>
+
+</main>
 <section class="fondoNegro">
-             <h3 class="girar">¡Contactanos! </h3> 
+<script src="js/enviosDOM.js"></script>             
+  
+  <h3 class="girar">¡Contactanos! </h3> 
             <ul >
       
             <li  class="btn--whatsapp"> <a href="https://api.whatsapp.com/send?phone=573193129782"> Whatsapp</a></li>
@@ -184,6 +188,7 @@
 
    </p>
 </footer>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
