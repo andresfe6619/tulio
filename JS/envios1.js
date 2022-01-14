@@ -1,6 +1,6 @@
 
 //function Monto () {  prompt ("ingrese el monto") }
-let Dolares= prompt ("Ingresa la divisa de tu pais")
+let Dolares= prompt ("Ingresa la divisa de tu pais").toLowerCase;
 if (Dolares== "pesos colombianos"){
   result = 4018
   alert(`Un dolar en su pais es ${result} pesos colombianos` )

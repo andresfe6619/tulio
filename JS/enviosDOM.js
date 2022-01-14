@@ -21,12 +21,12 @@ formulario.innerHTML = `
     <input placeholder='ingresa tu apellido' type='text'></input>
     <input placeholder='ingresa tu nombre de usuario' type='text'></input>
     <input placeholder='ingresa tu ciudad' type='text'></input>
-    <select placeholder> <option>Antioquia</option>
+    <select> <option>Antioquia</option>
     <option >Caldas</option>
     <option >Tolima</option>
     <option >Chocó</option>
     <option >Cauca</option>  
-    <option> otro </option> type='text'></select>
+    <option> otro </option> </select>
     <input placeholder='Especifica estado' type='text'></input>
     <input placeholder='ingresa tu direccion' type='text'></input>
     <button class='blancoNegro' type='submit'>Enviar</button>
@@ -41,6 +41,7 @@ formulario.onsubmit = function(event){
     titulo.innerHTML= "Has registrado un perfil" 
     titulo.classList.add('blancoNegro');
     document.body.append(titulo)
+    let json= JSON.stringify(perfiles1)
+    localStorage.setItem("perfiles", json)
     console.log(perfiles1);
-   
         }
