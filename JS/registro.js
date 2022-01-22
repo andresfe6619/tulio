@@ -1,32 +1,34 @@
-
+window.onload = function () {
+    alert("cargado...");
+ }
 let Datos = [];
 
 class Data { 
-    constructor(profile) {
+    constructor(nombre,segundoNombre,apellido,segundoApellido,direccion,numeroDeTelefono,correoElectronico,contraseña,comentarios,edad,sexo,especifica,acepta) {
         
-        this.id = perfiles1.length;
-        this.nombre = profile.nombre;
-        this.segundoNombre = profile.segundoNombre;
-        this.apellido = profile.apellido;
-        this.segundoApellido = profile.segundoApellido;
-        this.direccion = profile.direccion;
-        this.numeroDeTelefono = profile.numeroDeTelefono;
-        this.correoElectronico = profile.correoElectronico;
-        this.contraseña = profile.contraseña;
-        this.comentarios = profile.comentarios;
-        this.edad = profile.edad;
-        this.sexo = profile.sexo;
-        this.especifica= profile.especifica;
-        this.acepta= profile.acepta;
+        this.id = Datos.length;
+        this.nombre = nombre;
+        this.segundoNombre = segundoNombre;
+        this.apellido = apellido;
+        this.segundoApellido = segundoApellido;
+        this.direccion = direccion;
+        this.numeroDeTelefono = numeroDeTelefono;
+        this.correoElectronico = correoElectronico;
+        this.contraseña = contraseña;
+        this.comentarios = comentarios;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.especifica= especifica;
+        this.acepta= acepta;
     }
 }
 
-let formulario = document.getElementById('form');
+//let formulario = document.getElementById('form');
 
-formulario.addEventListener("submit", formularioenviado)
+//formulario.addEventListener("submit", formularioenviado)
 
-function formularioenviado(e){
-    e.preventDefault();
+//function formularioenviado(e){
+  /*   e.preventDefault();
    
     const inputs = e.target.children;
     Datos.push(new Data({ nombre: inputs[0].value, segundoNombre: inputs[1].value, apellido: inputs[2].value, segundoApellido: inputs[3].value, direccion: inputs[4].value, numeroDeTelefono: inputs[5].value, correoElectronico: inputs[6].value, contraseña: inputs[7].value, comentarios: inputs[8].value, edad: inputs[9].value, sexo: inputs[10].value, Especifica: inputs[11].value, acepta: inputs[12].value,}));
@@ -36,3 +38,22 @@ function formularioenviado(e){
     console.log("formulario enviado")
 
 }
+ */
+
+$('#form').on('submit', function (e) {
+            e.preventDefault();
+             let inputs = e.target.querySelectorAll('input');
+             
+             Datos.push(new Data(  inputs[0].value,  inputs[1].value, inputs[2].value,  inputs[3].value, inputs[4].value,  inputs[5].value,  inputs[6].value,  inputs[7].value, inputs[8].value,  inputs[9].value,  inputs[10].value,  inputs[11].value,  inputs[12].value));
+             
+             let titulo = document.createElement("h5")
+             titulo.innerHTML= "Has registrado un perfil" 
+             titulo.classList.add('blancoNegro');
+             document.body.prepend(titulo)
+             
+             let json= JSON.stringify(Datos)
+             sessionStorage.setItem("formulario", json)
+             console.log("formulario enviado")
+         
+             
+         })  

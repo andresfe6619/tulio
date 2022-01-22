@@ -5,11 +5,11 @@
 let perfiles1 = [];
 
 class Perfil { 
-    constructor(profile) {
+    constructor(email, password) {
         
         this.id = perfiles1.length;
-        this.email = profile.email;
-        this.password = profile.password;
+        this.email = email;
+        this.password = password;
        
     }
 }
@@ -32,8 +32,8 @@ document.body.appendChild(formulario);
 
 formulario.onsubmit = function(event){
     event.preventDefault();
-    const inputs = event.target.children;
-    perfiles1.push(new Perfil({ email: inputs[0].value, password: inputs[1].value,})); 
+    const inputs = event.target.querySelectorAll("input");
+    perfiles1.push(new Perfil( inputs[0].value, inputs[1].value,)); 
     let titulo = document.createElement("h5")
     titulo.innerHTML= "Has iniciado sesion."; 
     titulo.classList.add('blancoNegro');
