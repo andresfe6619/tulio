@@ -39,17 +39,26 @@ class Data {
 
 }
  */
+let titulo = document.createElement("h5")
+             titulo.innerHTML= "  ¡Has registrado un perfil!" 
+             titulo.classList.add('blancoNegro');
+             $("#animacion").prepend(titulo).hide()
 
 $('#form').on('submit', function (e) {
             e.preventDefault();
              let inputs = e.target.querySelectorAll('input');
              
              Datos.push(new Data(  inputs[0].value,  inputs[1].value, inputs[2].value,  inputs[3].value, inputs[4].value,  inputs[5].value,  inputs[6].value,  inputs[7].value, inputs[8].value,  inputs[9].value,  inputs[10].value,  inputs[11].value,  inputs[12].value));
+             $("form").fadeOut("fast")
              
-             let titulo = document.createElement("h5")
-             titulo.innerHTML= "Has registrado un perfil" 
+             
+             $("#animacion").fadeIn(3000)
+              
+             
+              /* let titulo = document.createElement("h5")
+             titulo.innerHTML= " ¡Has registrado un perfil!" 
              titulo.classList.add('blancoNegro');
-             document.body.prepend(titulo)
+             $("#form").append(titulo) */
              
              let json= JSON.stringify(Datos)
              sessionStorage.setItem("formulario", json)
@@ -57,3 +66,5 @@ $('#form').on('submit', function (e) {
          
              
          })  
+
+         

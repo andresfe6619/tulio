@@ -17,7 +17,10 @@ class Perfil {
 
 let formulario = document.createElement('form');
 formulario.innerHTML = `
-    <input placeholder='ingresa tu nombre' type='text'></input>
+
+<section id="forma"> </section>
+<fieldset id="animacion">
+<input placeholder='ingresa tu nombre' type='text'></input>
     <input placeholder='ingresa tu apellido' type='text'></input>
     <input placeholder='ingresa tu nombre de usuario' type='text'></input>
     <input placeholder='ingresa tu ciudad' type='text'></input>
@@ -32,22 +35,22 @@ formulario.innerHTML = `
     <input placeholder='Especifica estado' type='text'></input>
     <input placeholder='ingresa tu direccion' type='text'></input>
     <button class='blancoNegro' type='submit'>Enviar</button>
-    `;
+    </fieldset>`;
 document.body.appendChild(formulario);
+let titulo = document.createElement("h5")
+    titulo.innerHTML= "¡Has registrado tu direccion!"; 
+    titulo.classList.add('blancoNegro');
+    $("#forma").append(titulo).hide()
 
 formulario.onsubmit = function(event){
     event.preventDefault();
      const inputs = event.target.querySelectorAll('input');
     const options = event.target.querySelectorAll('option')
-    let titulo = document.createElement("h5")
-    titulo.innerHTML= "Has registrado un perfil" 
-    titulo.classList.add('blancoNegro');
-    document.body.append(titulo)
+    $("#animacion").fadeOut("fast");
    perfiles1.push(new Perfil(   inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value,  inputs[4].value,  options[5].value));
-    //perfiles1.push(new Perfil(  inputs));
     let json= JSON.stringify(perfiles1)
     localStorage.setItem("perfiles", json)
-  
+    $("#forma").fadeIn(1000)
 
     console.log(inputs[0].value);
         }
