@@ -63,3 +63,7 @@ formulario.onsubmit = function(event){
 
     console.log(inputs[0].value);
         }
+
+        $.get(URLenvios, function(response, state) {
+                 console.log(response)
+             })
