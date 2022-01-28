@@ -2,7 +2,7 @@ window.onload = function () {
     alert("cargado...");
  }
 let Datos = [];
-
+const URLregistro = "C:\Users\Andres\Documents\desarrollo web\meowsculuos-vasquez\JS\Json\Datos.json"
 class Data { 
     constructor(nombre,segundoNombre,apellido,segundoApellido,direccion,numeroDeTelefono,correoElectronico,contraseña,comentarios,edad,sexo,especifica,acepta) {
         
@@ -59,7 +59,11 @@ $('#form').on('submit', function (e) {
              titulo.innerHTML= " ¡Has registrado un perfil!" 
              titulo.classList.add('blancoNegro');
              $("#form").append(titulo) */
-             
+             $.post(URLregistro, Datos,(response, state) => {
+                if(state === "succes"){
+                    alert("Se han enviado los datos del usuario a la base de datos");
+                }
+            })
              let json= JSON.stringify(Datos)
              sessionStorage.setItem("formulario", json)
              console.log("formulario enviado")

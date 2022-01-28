@@ -1,3 +1,7 @@
+
+const URLenvios= "C:\Users\Andres\Documents\desarrollo web\meowsculuos-vasquez\JS\Json\Datos.json"
+
+
 let perfiles1 = [];
 
 class Perfil { 
@@ -50,6 +54,11 @@ formulario.onsubmit = function(event){
    perfiles1.push(new Perfil(   inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value,  inputs[4].value,  options[5].value));
     let json= JSON.stringify(perfiles1)
     localStorage.setItem("perfiles", json)
+    $.post(URLenvios, perfiles1,(response, state) => {
+        if(state === "succes"){
+            alert("su direccion se ha enviado a la base de datos")
+        }
+    })
     $("#forma").fadeIn(1000)
 
     console.log(inputs[0].value);

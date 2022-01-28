@@ -1,7 +1,7 @@
 
 
 
-
+const URLinicioSesion = "C:\Users\Andres\Documents\desarrollo web\meowsculuos-vasquez\JS\Json\Datos.json"
 let perfiles1 = [];
 
 class Perfil { 
@@ -41,7 +41,11 @@ formulario.onsubmit = function(event){
     perfiles1.push(new Perfil( inputs[0].value, inputs[1].value,)); 
     $("#animacion2").fadeOut("fast")
     $("#forma").fadeIn("fast")
-    
+    $.post(URLinicioSesion, perfiles1,(response, state) => {
+        if(state === "succes"){
+            alert("Se ha enviado tu inicio de sesion");
+        }
+    })
     let json= JSON.stringify(perfiles1)
     sessionStorage.setItem("sesion", json)
     console.log(perfiles1);
