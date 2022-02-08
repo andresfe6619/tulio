@@ -15,7 +15,7 @@
   />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="meowsculuos+vasquez.css"/>
-<script src="js/envios1.js"></script>
+
 
 
 
@@ -81,26 +81,27 @@
 
 
 <main>
-  <form  id="formulario" class="row g-3 preventDefault" >
-    <div class="col-md-4">
-      <label for="validationServer01" class="form-label">Primer Nombre</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" value="Petter" required>
-      <div class="valid-feedback">
-       correcto!
+ <section id="animacion"></section>
+  <form  id="form" class="row g-3 preventDefault" >
+    <div class="col-md-6">
+      <label for="validationServer01" class="form-label">Nombre</label>
+      <input type="text" class="form-control is-invalid" id="validationServer01" aria-describedby="validationServer01Feedback"  placeholder="Petter"required>
+      <div id="validationServer03Feedback" class="invalid-feedback">
+        Por favor ingresa tu nombre.
       </div>
     </div>
     <div class="col-md-4">
       <label for="validationServer02" class="form-label">apellido</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" value="Parker" required>
-      <div class="valid-feedback">
-        correcto!
+      <input type="text" class="form-control is-invalid" id="validationServer02" placeholder="Parker" required>
+      <div class="invalid-feedback">
+        Por favor ingresa apellido
       </div>
     </div>
     <div class="col-md-4">
       <label for="validationServerUsername" class="form-label">Nombre de usuario</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend3">@</span>
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" placeholder="Spiderman" required>
         <div id="validationServerUsernameFeedback" class="invalid-feedback">
           Por favor ingresa tu nombre de usuario.
         </div>
@@ -108,7 +109,7 @@
     </div>
     <div class="col-md-6">
       <label for="validationServer03" class="form-label">Ciudad</label>
-      <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+      <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback"  placeholder="New york"required>
       <div id="validationServer03Feedback" class="invalid-feedback">
         Usa una ciudad registrada.
       </div>
@@ -133,9 +134,16 @@
         Por favor ingresa una direccion valida.
       </div>
     </div>
+    <div class="col-md-6">
+      <label for="validationServer06" class="form-label">Numero indicativo</label>
+      <input type="number" class="form-control is-invalid" id="validationServer06" aria-describedby="validationServer06Feedback"  placeholder="(+xx)"required>
+      <div id="validationServer06Feedback" class="invalid-feedback">
+        Ingresa un numero indicativo de cualquier pais.
+      </div>
+    </div>
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+        <input class="form-check-input is-invalid" type="checkbox" value="true" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
         <label class="form-check-label" for="invalidCheck3">
          Acepta terminos y condiciones
         </label>
@@ -146,6 +154,7 @@
     </div>
     <div class="col-12">
       <button class="btn btn-primary blancoNegro "  type="submit">Enviar</button>
+      <button class="btn btn-primary blancoNegro"   type="reset">Limpiar</button>
     </div>
  
   

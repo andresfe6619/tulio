@@ -1,11 +1,21 @@
 
-const URLenvios= "C:\Users\Andres\Documents\desarrollo web\meowsculuos-vasquez\JS\Json\Datos.json"
+const URLenvios= "Json\Datos.json"
+    
+   
+
+    
+
+
+
+
+
+
 
 
 let perfiles1 = [];
 
 class Perfil { 
-    constructor(nombre, apellido, NombreDeusuario, ciudad, estado, especifica, direccion) {
+    constructor(nombre, apellido, NombreDeusuario, ciudad, estado, direccion,  Dato2, acepta) {
         
         this.id = perfiles1.length;
         this.nombre = nombre;
@@ -13,57 +23,64 @@ class Perfil {
         this.NombreDeusuario = NombreDeusuario;
         this.ciudad = ciudad;
         this.estado = estado;
-        this.especifica= especifica;
         this.direccion = direccion;
+        this.pais= Dato2;
+        this.acepta= acepta;
+       
+ 
     
-    }
+if (Dato2== +57){
+   this.pais= "colombia "
 }
 
-let formulario = document.createElement('form');
-formulario.innerHTML = `
+ else if (Dato2== +52){
+   this.pais= "mexico "
+}
 
-<section id="forma"> </section>
-<fieldset id="animacion">
-<input placeholder='ingresa tu nombre' type='text'></input>
-    <input placeholder='ingresa tu apellido' type='text'></input>
-    <input placeholder='ingresa tu nombre de usuario' type='text'></input>
-    <input placeholder='ingresa tu ciudad' type='text'></input>
-    <select> 
-    <option>Antioquia</option>
-    <option >Caldas</option>
-    <option >Tolima</option>
-    <option >Chocó</option>
-    <option >Cauca</option>  
-    <option> otro </option> 
-    </select>
-    <input placeholder='Especifica estado' type='text'></input>
-    <input placeholder='ingresa tu direccion' type='text'></input>
-    <button class='blancoNegro' type='submit'>Enviar</button>
-    </fieldset>`;
-document.body.appendChild(formulario);
+ else if (Dato2== +54){
+    this.pais= "argentina "
+}
+
+ else if (Dato2== +503){
+    this.pais= "Salvador"
+}
+
+ else {
+    this.pais= "no registrado"
+}
+}
+ }
+
+
 let titulo = document.createElement("h5")
-    titulo.innerHTML= "¡Has registrado tu direccion!"; 
-    titulo.classList.add('blancoNegro');
-    $("#forma").append(titulo).hide()
+             titulo.innerHTML= "  ¡Has registrado un perfil de envios!" 
+             titulo.classList.add('blancoNegro');
+             $("#animacion").prepend(titulo).hide()
 
-formulario.onsubmit = function(event){
-    event.preventDefault();
-     const inputs = event.target.querySelectorAll('input');
-    const options = event.target.querySelectorAll('option')
-    $("#animacion").fadeOut("fast");
-   perfiles1.push(new Perfil(   inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value,  inputs[4].value,  options[5].value));
-    let json= JSON.stringify(perfiles1)
-    localStorage.setItem("perfiles", json)
-    $.post(URLenvios, perfiles1,(response, state) => {
-        if(state === "succes"){
-            alert("su direccion se ha enviado a la base de datos")
-        }
-    })
-    $("#forma").fadeIn(1000)
+$('#form').on('submit', function (e) {
+            e.preventDefault();
+             let inputs = e.target.querySelectorAll('input, select');
+             
+             perfiles1.push(new Perfil(  inputs[0].value,  inputs[1].value, inputs[2].value,  inputs[3].value, inputs[4].value,  inputs[5].value,  inputs[6].value,  inputs[7].value));
+             $("form").fadeOut("fast")
+             form.reset()
+             
+             $("#animacion").fadeIn(3000)
+              
+             
+         
+             $.post(URLenvios, perfiles1,(response, state) => {
+                if(state === "succes"){
+                    alert("Se han enviado los datos del usuario a la base de datos");
+                }
+            })
+             let json= JSON.stringify(perfiles1)
+             sessionStorage.setItem("Perfil", json)
+             console.log("formulario enviado")
+            
+            $("form").fadeIn(4000) 
+            
+        })  
 
-    console.log(inputs[0].value);
-        }
-
-        $.get(URLenvios, function(response, state) {
-                 console.log(response)
-             })
+        
+        
