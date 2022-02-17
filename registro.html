@@ -75,71 +75,149 @@
 
 </section>
 
-       <form id= "form" action="" >
+ 
+
+
+
+}
+<form action="" class="formulario" id="formulario">
+  <div class="formulario__grupo" id="grupo__usuario">
+    <label for="usuario" class="formulario__label">Usuario</label>
+    <div class="formulario__grupo-input">
+      <input type="text" class="colorBlanco" name="usuario" id="usuario"  placeholder="Batman"required>
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+  </div>
+
+  
+  <div class="formulario__grupo" id="grupo__nombre">
+    <label for="nombre" class="formulario__label">Nombre</label>
+    <div class="formulario__grupo-input">
+      <input type="text" class="colorBlanco" name="nombre" id="nombre" placeholder="Bruce wayne" required>
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">El nombre tiene que ser de 1 a 40 dígitos .</p>
+  </div>
+
+ 
+  <div class="formulario__grupo" id="grupo__password">
+    <label for="password" class="formulario__label">Contraseña</label>
+    <div class="formulario__grupo-input">
+      <input type="password" class="colorBlanco" name="password" id="password" placeholder="batmanesmejorquesuperman" required>
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+  </div>
+
+  <div class="formulario__grupo" id="grupo__password2">
+    <label for="password2" class="colorBlanco">Repetir Contraseña</label>
+    <div class="formulario__grupo-input">
+      <input type="password" class="colorBlanco" name="password2" id="password2">
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+  </div>
+
+  
+  <div class="formulario__grupo" id="grupo__correo">
+    <label for="correo" class="formulario__label">Correo Electrónico</label>
+    <div class="formulario__grupo-input">
+      <input type="email" class="colorBlanco" name="correo" id="correo" placeholder="batman@elmasricodegotham.bat" required>
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+  </div>
+
+  
+  <div class="formulario__grupo" id="grupo__telefono">
+    <label for="telefono" class="formulario__label">Teléfono</label>
+    <div class="formulario__grupo-input">
+      <input type="text" class="colorBlanco"name="telefono" id="telefono" placeholder="4491234567" required>
+      <i class="formulario__validacion-estado fas "></i>
+    </div>
+    <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+  </div>
+
+  
+  <div class="formulario__grupo" id="grupo__terminos">
+    <label class="formulario__label"> Acepto los Terminos y Condiciones</label>
+      <input class="colorBlanco" type="checkbox" name="terminos" id="terminos" value="true" required>
+     
+    
+  </div>
+
+  <div class="formulario__mensaje" id="formulario__mensaje">
+    <h6><i ></i> <b>Contraseñas:</b> las contraseñas no coinciden. </h6>
+  </div>
+
+  <div class="formulario__grupo formulario__grupo-btn-enviar">
+    <button type="submit" class="bloquesito">Enviar</button>
+    <h6 class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</h6>
+  </div>
+</form>
+<!--       <form id= "form" action="" >
             <fieldset >
                 <legend>Informacion personal</legend>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="Nombre" placeholder="Andrés"> <br>
-                <label for="nombre">Segundo nombre    :</label>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" name="Nombre" placeholder="Andrés" required> <br>
+                <label for="nombre">Segundo nombre    :</label> <br>
                 <input type="text" name="Nombre" placeholder="Felipe"> <br>
-                <label for="apellido">Apellido        :</label>
-                <input type="text" name="Apellido" placeholder="Noreña"> <br>
-                <label for="apellido">Segundo apellido:</label>
+                <label for="apellido">Apellido        :</label> <br>
+                <input type="text" name="Apellido" placeholder="Noreña" required> <br>
+                <label for="apellido">Segundo apellido:</label> <br>
                 <input type="text" name="Apellido" placeholder="Vasquez"> <br>
-                <label for="Direccion" >Direccion      :</label>
+                <label for="Direccion" >Direccion      :</label> <br>
                 <input type="text" name="Direccion " placeholder="Santa Barbara Antioquia"> <br>
-                <label for="Celular"> Celular:</label>
+                <label for="Celular"> Celular:</label><br>
                 <input type="text" name="Celular" placeholder="(XX) XXX XXX XX XX"> <br>
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="Correo" placeholder="uncorreocualquiera@gmail.com"> <br>
-                <label for="pass">Contraseña:</label>
-                <input type="password" name="pass" placeholder="******************"> <br>
-                <label for="comentario" >Comentarios:</label> <br>
-                <textarea  type"text" name="comentarios" placeholder="****************"cols="20" rows="5" ></textarea>
-            
-            
-            <h4> Edad</h4>
-            <select  name="edades">
+                <label for="correo">Correo electrónico:</label ><br>
+                <input type="email" name="Correo" placeholder="uncorreocualquiera@gmail.com" required> <br>
+                <label for="pass">Contraseña:</label><br>
+                <input type="password" name="pass" placeholder="******************" required> <br>
+                <label for="pass">Confirmar contraseña:</label><br>
+                <input type="password" name="pass2" placeholder="******************" required> <br>
+          <section id="contraseñas"></section>
+            <p> Edad</p>
+            <select  name="edades" required>
                 <option  type="text" value="14-17">14-17 años</option>
                 <option type="text"  value="18-21">18-21 años</option>
                 <option type="text" value="21-25">21-25 años</option>
                 <option type="text" value="25-30">25-30 años</option>
                 <option type="text" value="30 o mas">30 o más</option>
-            </select>
+            </select><br>
 
 
 
             <p>Género</p>
-            <div>hombre</div>
-            <input type="radio" name="sexo" value="hombre" />
-            <div>mujer</div>
-            <input type="radio" name="sexo" value="mujer" />
-            <div>otro</div>
-            <input type="radio" name="sexo" value="otro" /> <br>
-
-            <input type="text" name="Especifique cual" placeholder="Escriba cual">
+            
+            <select  name="sexo" required>
+              <option  type="text" value="Hombre">Hombre</option>
+              <option type="text"  value="Mujer">Mujer</option>
+              <option type="text" value="Otro">Otro</option></select> <br>
+             
+            <input type="text" name="Especifique cual" placeholder="Escriba cual"><br>
 
 ​
            
 
 
-            <h4>Terminos y condiciones</h4>
-            <div>Acepto términos y condiciones</div>
-            <input type="checkbox" name="acepta" value="true" /> <br>
+            
+            <label>Acepto términos y condiciones</label>
+            <input type="checkbox" name="acepta" value="true" required/> <br>
 
 ​
             
            
             
        
-            <input type="submit" value="Enviar formulario"/>
-            <input type="reset" value="borrar formulario"/>
-            
+<button class="bloquesito blancoNegro "  type="submit">Enviar formulario</button>
+<button class=" bloquesito blancoNegro"   type="reset">Limpiar formulario</button>
        </fieldset>
         </form>
    <section id="animacion"> 
 
-   </section>
+   </section> -->
         <button ><a href="#arriba"> Volver al menú</a></button>
         <button ><a href="index.html"> Volver a la pagina principal</a></button>
      

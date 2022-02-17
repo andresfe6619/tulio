@@ -67,7 +67,10 @@ $('#form').on('submit', function (e) {
              
              $("#animacion").fadeIn(3000)
               
-             
+             setTimeout(function() {
+  
+                $("#animacion").fadeOut(2000);
+                   },5000);  
          
              $.post(URLenvios, perfiles1,(response, state) => {
                 if(state === "succes"){
