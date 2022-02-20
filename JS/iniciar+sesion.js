@@ -2,7 +2,7 @@
 
 
 const URLinicioSesion = "Json\Datos.json"
-
+//formulario
 let formulario1 = document.createElement('form');
 
 formulario1.innerHTML = `
@@ -28,12 +28,13 @@ formulario1.innerHTML = `
 </fieldset>  `;
 
 formulario1.classList.add('setentavh');
-document.body.appendChild(formulario1);
+$("#formulario").append(formulario1);
 const formulario = formulario1
+// constructor
 let perfiles1 = [
 ];
 
-class campos { 
+class sesion { 
     constructor(correo , password) {
         
         this.id = perfiles1.length;
@@ -45,7 +46,7 @@ class campos {
        
 
 
-        
+        // mensaje
           if (correo== "andresfe6619@gmail.com" && password =="noselasabe123" ){
             let titulo = document.createElement("h5")
     titulo.innerHTML= "¡bienvenido Andres!"; 
@@ -77,13 +78,13 @@ class campos {
 
 
 
- 
+ // evento submit
 
 formulario.onsubmit = function(event){
   event.preventDefault();
 
   const inputs = event.target.querySelectorAll("input");
-  perfiles1.push(new campos( inputs[0].value, inputs[1].value,)); 
+  perfiles1.push(new sesion( inputs[0].value, inputs[1].value,)); 
   $("#animacion2").fadeOut("fast")
    $("#forma").fadeIn("fast")
   formulario.reset()

@@ -1,17 +1,6 @@
 
 const URLenvios= "Json\Datos.json"
-    
-   
-
-    
-
-
-
-
-
-
-
-
+// constructor      
 let perfiles1 = [];
 
 class Perfil { 
@@ -51,12 +40,12 @@ if (Dato2== +57){
 }
  }
 
-
+// mensaje
 let titulo = document.createElement("h5")
              titulo.innerHTML= "  ¡Has registrado un perfil de envios!" 
              titulo.classList.add('blancoNegro');
              $("#animacion").prepend(titulo).hide()
-
+// evento submit
 $('#form').on('submit', function (e) {
             e.preventDefault();
              let inputs = e.target.querySelectorAll('input, select');
@@ -78,7 +67,7 @@ $('#form').on('submit', function (e) {
                 }
             })
              let json= JSON.stringify(perfiles1)
-             sessionStorage.setItem("Perfil", json)
+             localStorage.setItem("Perfil", json)
              console.log("formulario enviado")
             
             $("form").fadeIn(4000) 
