@@ -88,7 +88,7 @@ formulario.onsubmit = function(event){
   $("#animacion2").fadeOut("fast")
    $("#forma").fadeIn("fast")
   formulario.reset()
-    $("#forma").fadeOut(4000)
+    
   setTimeout(function() {
  $("#forma").empty();
     },5000);  

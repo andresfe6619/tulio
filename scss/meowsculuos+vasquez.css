@@ -122,6 +122,9 @@ body {
   min-height: 100vh;
 }
 
+header {
+  background-image: url(imagenes/1234.jpg) !important;
+}
 
 .letraNormal {
   color: black !important;
@@ -498,7 +501,6 @@ iframe {
 }
 
 .formulario__mensaje-exito {
-  font-size: 14px;
   color: white;
   display: none;
 }
